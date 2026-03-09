@@ -21,13 +21,13 @@ def get_versions_and_stock(page: Page) -> PreloadResult:
             if text and text not in versions:
                 versions.append(text)
     except Exception:
-        pass
+        versions = []
 
     try:
         button = page.get_by_text(PURCHASE_KEYWORDS).first
         in_stock = button.is_visible(timeout=2000)
     except Exception:
-        pass
+        in_stock = False
 
     return PreloadResult(versions=versions, in_stock=in_stock)
 
