@@ -1,11 +1,11 @@
 # autobuy
 
 DJI 多账号自动加购（Tkinter GUI + Playwright）重构版，支持：
-- 读取 `docx` 账号表
-- 商品页预加载版本 + 库存探测
-- 正常加购 / 缺货监控两种模式
+- 在 App 内配置账号（不依赖本地账号文档）
+- 在 App 内配置多个任务（URL、版本、模式、账号分配）
+- 支持执行“选中任务”或“全部启用任务”
 - 多账号并发执行（线程池限流）
-- 基本信息持久化（账号文件路径、购买链接、执行参数）
+- 基本信息持久化（账号、任务、执行参数）
 - 可停止任务、执行统计、日志落盘
 
 ## 项目结构
@@ -60,3 +60,4 @@ git commit -m "feat: initial autobuy refactor and mac app packaging"
 
 - 本次为初始版本，不单独产出补丁。
 - 从下一次需求新增/删除/问题修复开始，每次变更都同时产出一个 patch 文件，存放在 `patches/` 目录。
+- 需求/问题时间线日志维护在：`docs/AUTOBUY_full_conversation_log.txt`（当前不包含 Codex 提交时间轴段落）。
